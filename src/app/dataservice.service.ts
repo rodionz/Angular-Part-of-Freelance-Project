@@ -1,3 +1,4 @@
+import { Http } from '@angular/http';
 import { KupatHolim } from './Models/kupot-holim';
 import { Injectable } from '@angular/core';
 import { KupotholimComponent } from './kupotholim/kupotholim.component';
@@ -7,6 +8,8 @@ import { Employees } from './Models/employees';
 export class DataserviceService {
 private kupot : KupatHolim [] = [];
 private employees : Employees[] = [];
-  constructor() { }
+
+
+  constructor(private http : Http) { }
 
 }
