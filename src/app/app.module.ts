@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { KupotholimComponent } from './kupotholim/kupotholim.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { HeaderComponent } from './header.component';
+import { DataserviceService } from './dataservice.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,11 @@ import { HeaderComponent } from './header.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
+    
   ],
-  providers: [],
+  providers: [DataserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

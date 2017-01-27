@@ -1,7 +1,7 @@
-import { Http, Response } from '@angular/http';
+import { Http, Response , Headers} from '@angular/http';
 import { KupatHolim } from './Models/kupot-holim';
 import { EventEmitter, Injectable } from '@angular/core';
-import { KupotholimComponent } from './kupotholim/kupotholim.component';
+
 import { Employees } from './Models/employees';
 import 'rxjs/Rx';
 

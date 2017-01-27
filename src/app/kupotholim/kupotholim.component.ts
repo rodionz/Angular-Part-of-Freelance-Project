@@ -13,4 +13,8 @@ export class KupotholimComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  onFetch(){
+    this.dataservice.fetchKupot();
+  }
 }
