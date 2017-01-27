@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { DataserviceService } from '../dataservice.service';
 
@@ -8,7 +9,10 @@ import { DataserviceService } from '../dataservice.service';
 })
 export class KupotholimComponent implements OnInit {
 
-  constructor(private dataservice: DataserviceService) { }
+  constructor(
+    private dataservice: DataserviceService,
+    private router : Router
+    ) { }
 
   ngOnInit() {
   }

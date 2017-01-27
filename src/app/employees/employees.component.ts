@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { DataserviceService } from '../dataservice.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from "rxjs/Rx";
@@ -10,7 +11,10 @@ export class EmployeesComponent implements OnInit {
 private subscription : Subscription;
 
 
-  constructor(private dataservice: DataserviceService) { }
+  constructor(
+    private dataservice: DataserviceService,
+    private router : Router
+    ) { }
 
   ngOnInit() {
   }
