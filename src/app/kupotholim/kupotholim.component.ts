@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataserviceService } from '../dataservice.service';
 
 @Component({
   selector: 'app-kupotholim',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KupotholimComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataservice: DataserviceService) { }
 
   ngOnInit() {
   }
