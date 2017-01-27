@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { KupotholimComponent } from './kupotholim/kupotholim.component';
 import { EmployeesComponent } from './employees/employees.component';
+import { HeaderComponent } from './header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     KupotholimComponent,
-    EmployeesComponent
+    EmployeesComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
