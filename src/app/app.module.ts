@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { KupotholimComponent } from './kupotholim/kupotholim.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { HeaderComponent } from './header.component';
-import { DataserviceService } from './dataservice.service';
+import { DataserviceService } from './services/dataservice.service';
+
 
 @NgModule({
   declarations: [

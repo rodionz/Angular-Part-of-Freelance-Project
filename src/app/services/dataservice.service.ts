@@ -1,9 +1,10 @@
 import { Http, Response , Headers} from '@angular/http';
-import { KupatHolim } from './Models/kupot-holim';
+
 import { EventEmitter, Injectable } from '@angular/core';
 
-import { Employees } from './Models/employees';
+
 import 'rxjs/Rx';
+import { KupatHolim } from '../AngularModels/kupot-holim';
 
 @Injectable()
 export class DataserviceService {

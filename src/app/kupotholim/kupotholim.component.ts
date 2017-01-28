@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { DataserviceService } from '../dataservice.service';
+import { DataserviceService } from '../services/dataservice.service';
 
 @Component({
   selector: 'app-kupotholim',
