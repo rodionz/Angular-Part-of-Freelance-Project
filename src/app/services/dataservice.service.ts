@@ -5,6 +5,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 
 import 'rxjs/Rx';
 import { KupatHolim } from '../AngularModels/kupot-holim';
+import { Employees } from '../AngularModels/employees';
 
 @Injectable()
 export class DataserviceService {
@@ -15,6 +16,24 @@ private employees : Employees[] = [];
   constructor(private http : Http) { }
  kupotChaged = new EventEmitter<KupatHolim[]>();
  employeeStatusChanged = new EventEmitter<Employees[]>();
+
+
+
+    storeKupot() {
+    const body = JSON.stringify(this.kupot);
+    const headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    return this.http.put('', body, {headers: headers});
+  }
+
+   storeEmployeeStatus() {
+    const body = JSON.stringify(this.employees);
+    const headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    return this.http.put('', body, {headers: headers});
+  }
 
 
     fetchKupot(){

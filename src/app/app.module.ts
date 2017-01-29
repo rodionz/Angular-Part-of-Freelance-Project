@@ -8,6 +8,7 @@ import { KupotholimComponent } from './kupotholim/kupotholim.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { HeaderComponent } from './header.component';
 import { DataserviceService } from './services/dataservice.service';
+import { Routing } from './app.routing';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DataserviceService } from './services/dataservice.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Routing
     
   ],
   providers: [DataserviceService],
