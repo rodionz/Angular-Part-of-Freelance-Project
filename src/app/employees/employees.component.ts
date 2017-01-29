@@ -20,11 +20,18 @@ private subscription : Subscription;
   }
 
 onFetch(){
-    this.dataservice.fetchFamilyStatus()
-    
-    
+    this.dataservice.fetchFamilyStatus();  
   }
 
+onStore(){
+  this.dataservice.storeFamilytatus().subscribe(
+    data => console.log(data),
+    error => console.error(error)
+  );
+}
 
+dblClick(){
+ console.log("Double Click")
+}
 
 }

@@ -27,12 +27,12 @@ private employees : Employees[] = [];
     return this.http.put('', body, {headers: headers});
   }
 
-   storeEmployeeStatus() {
+   storeFamilytatus() {
     const body = JSON.stringify(this.employees);
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
-    return this.http.put('', body, {headers: headers});
+    return this.http.put('https://bituhshevet.firebaseio.com/bituhshevet.json', body, {headers: headers});
   }
 
 
