@@ -11,7 +11,7 @@ import { KupatHolim } from '../AngularModels/kupot-holim';
 })
 export class KupotholimComponent implements OnInit {
  private subscription: Subscription;
-    emmployees : KupatHolim [] = [];
+    kupotholim : KupatHolim [] = [];
 
 
   constructor(
@@ -20,11 +20,14 @@ export class KupotholimComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.dataservice.GetKupot();
+   this.kupotholim = this.dataservice.getKupot();
+   this.dataservice.kupotChaged.subscribe(
+     (kupot : KupatHolim []) => this.kupotholim = kupot
+   );
   }
 
 
   onFetch(){
-    this.dataservice.fetchKupot();
+    console.log(this.kupotholim);
   }
 }

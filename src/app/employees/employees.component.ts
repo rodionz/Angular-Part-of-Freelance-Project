@@ -19,26 +19,27 @@ export class EmployeesComponent implements OnInit {
     constructor(
         private dataservice: DataserviceService,
         private router: Router
-    ) {
-      this.emmployees = this.dataservice.storeFamilytatus()
-     }
+    ) {}
 
-    ngOnInit() {
-      this.dataservice.storeFamilytatus()
-    }
-    onStore() {
-        this.dataservice.storeFamilytatus().subscribe(
-            data => console.log(data),
-            error => console.error(error)
-        );
-    }
+      ngOnInit() {
+   this.emmployees = this.dataservice.getEmployees();
+   this.dataservice.employeeStatusChanged.subscribe(
+     (emmployees: Employees[]) => this.emmployees = emmployees
+   );
+  }
+
+
+    // onStore() {
+    //     this.dataservice.storeFamilytatus().subscribe(
+    //         data => console.log(data),
+    //         error => console.error(error)
+    //     );
+    // }
 
     onFetch() {
-        this.dataservice.GetFamilyStatus().subscribe(
-            data => console.log(data),
-            error => console.error(error)
+     console.log(this.emmployees)
 
-        )
+    }
 
 
     }

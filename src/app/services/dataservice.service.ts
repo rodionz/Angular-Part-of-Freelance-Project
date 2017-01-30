@@ -32,16 +32,24 @@ export class DataserviceService {
     //    return this.http.post('/HomeController', body, { headers: headers });
     //}
 
-    storeFamilytatus() {
-        const body = JSON.stringify(this.employees);
-        this.headers = new Headers();
-        this.headers.append('Content-Type', 'application/json');
-        this.headers.append('Access-Control-Allow-Origin', '*');
-        return this.http.post('', body, { headers: this.headers });
-    }
+    // storeFamilytatus() {
+    //     const body = JSON.stringify(this.employees);
+    //     this.headers = new Headers();
+    //     this.headers.append('Content-Type', 'application/json');
+    //     this.headers.append('Access-Control-Allow-Origin', '*');
+    //     return this.http.post('', body, { headers: this.headers });
+    // }
+
+getKupot(){
+  return this.kupot;
+}
 
 
-    GetKupot() {
+getEmployees(){
+  return this.employees;
+}
+
+    GetKupotFromDataBase() {
         return this.http.get('http://localhost:64159/Home/GetKupot')
             .map((response: Response) => response.json())
             .subscribe(
@@ -52,7 +60,7 @@ export class DataserviceService {
           );
     }
 
-    GetFamilyStatus() {
+    GetFamilyStatusFromDataBase() {
         return this.http.get('http://localhost:64159/Home/GetEmployees')
             .map((response: Response) => response.json())
             .subscribe(
