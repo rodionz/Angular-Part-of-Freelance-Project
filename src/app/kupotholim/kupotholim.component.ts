@@ -1,6 +1,8 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { DataserviceService } from '../services/dataservice.service';
+import { Subscription } from 'rxjs/Rx';
+import { KupatHolim } from '../AngularModels/kupot-holim';
 
 @Component({
   selector: 'app-kupotholim',
@@ -8,6 +10,9 @@ import { DataserviceService } from '../services/dataservice.service';
   styleUrls: ['./kupotholim.component.css']
 })
 export class KupotholimComponent implements OnInit {
+ private subscription: Subscription;
+    emmployees : KupatHolim [] = [];
+
 
   constructor(
     private dataservice: DataserviceService,
@@ -15,6 +20,7 @@ export class KupotholimComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    this.dataservice.GetKupot();
   }
 
 
