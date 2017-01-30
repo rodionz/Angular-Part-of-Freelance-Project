@@ -7,7 +7,7 @@ import { Employees } from '../AngularModels/employees';
 
 
 @Component({
-    moduleId: module.id,
+    
     selector: 'app-employees',
     templateUrl: './employees.component.html'
    
@@ -22,22 +22,18 @@ export class EmployeesComponent implements OnInit {
     ) {}
 
       ngOnInit() {
-   this.emmployees = this.dataservice.getEmployees();
-   this.dataservice.employeeStatusChanged.subscribe(
-     (emmployees: Employees[]) => this.emmployees = emmployees
-   );
-  }
+      this.emmployees = this.dataservice.getEmployees();
+      this.dataservice.employeeStatusChanged.subscribe(
+      (emmpl: Employees[]) => this.emmployees = emmpl
+          );
+     }
 
 
-    // onStore() {
-    //     this.dataservice.storeFamilytatus().subscribe(
-    //         data => console.log(data),
-    //         error => console.error(error)
-    //     );
-    // }
-
+ 
     onFetch() {
-     console.log(this.emmployees)
+   
+   console.log(this.emmployees)
+     
 
     }
 
@@ -46,4 +42,3 @@ export class EmployeesComponent implements OnInit {
 
 
 
-}

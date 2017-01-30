@@ -10,7 +10,7 @@ import { Employees } from '../AngularModels/employees';
 @Injectable()
 export class DataserviceService {
     private kupot: KupatHolim[] = [];
-    private employees: Employees[] = [];
+    private empl: Employees[] = [];
     private headers: Headers;
 
     constructor(private http: Http) {
@@ -46,7 +46,7 @@ getKupot(){
 
 
 getEmployees(){
-  return this.employees;
+  return this.empl;
 }
 
     GetKupotFromDataBase() {
@@ -65,8 +65,8 @@ getEmployees(){
             .map((response: Response) => response.json())
             .subscribe(
               ( data : Employees[]) => {
-                this.employees = data;
-                this.employeeStatusChanged.emit(this.employees);
+                this.empl = data;
+                this.employeeStatusChanged.emit(this.empl);
               }             
             );                  
     };

@@ -6,8 +6,8 @@ import { KupatHolim } from '../AngularModels/kupot-holim';
 
 @Component({
   selector: 'app-kupotholim',
-  templateUrl: './kupotholim.component.html',
-  styleUrls: ['./kupotholim.component.css']
+  templateUrl: './kupotholim.component.html'
+  
 })
 export class KupotholimComponent implements OnInit {
  private subscription: Subscription;
@@ -20,14 +20,16 @@ export class KupotholimComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-   this.kupotholim = this.dataservice.getKupot();
-   this.dataservice.kupotChaged.subscribe(
+      this.kupotholim = this.dataservice.getKupot();
+      this.dataservice.kupotChaged.subscribe(
      (kupot : KupatHolim []) => this.kupotholim = kupot
    );
+   
   }
 
 
   onFetch(){
+ 
     console.log(this.kupotholim);
   }
 }
