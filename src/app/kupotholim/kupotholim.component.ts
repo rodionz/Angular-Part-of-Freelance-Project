@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataserviceService } from '../services/dataservice.service';
 import { Subscription } from 'rxjs/Rx';
 import { KupatHolim } from '../AngularModels/kupot-holim';
+import { DropdownValue, DropdownComponent } from '../Shared/drop-down-list.component';
 
 @Component({
   selector: 'app-kupotholim',
@@ -12,7 +13,7 @@ import { KupatHolim } from '../AngularModels/kupot-holim';
 export class KupotholimComponent implements OnInit {
  private subscription: Subscription;
     kupotholim : KupatHolim [] = [];
-
+   
 
   constructor(
     private dataservice: DataserviceService,

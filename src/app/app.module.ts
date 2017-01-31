@@ -9,7 +9,8 @@ import { EmployeesComponent } from './employees/employees.component';
 import { HeaderComponent } from './header.component';
 import { DataserviceService } from './services/dataservice.service';
 import { Routing } from './app.routing';
-import { DropDownListComponent } from './Shared/drop-down-list.component';
+import { DropdownValue, DropdownComponent } from './Shared/drop-down-list.component';
+
 
 
 @NgModule({
@@ -17,8 +18,9 @@ import { DropDownListComponent } from './Shared/drop-down-list.component';
     AppComponent,
     KupotholimComponent,
     EmployeesComponent,
-    HeaderComponent,
-    DropDownListComponent
+    HeaderComponent,   
+    DropdownComponent
+    
   ],
   imports: [
     BrowserModule,
