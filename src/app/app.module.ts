@@ -9,7 +9,7 @@ import { EmployeesComponent } from './employees/employees.component';
 import { HeaderComponent } from './header.component';
 import { DataserviceService } from './services/dataservice.service';
 import { Routing } from './app.routing';
-import { DropdownValue, DropdownComponent } from './Shared/drop-down-list.component';
+// import { DropdownValue, DropdownComponent } from './Shared/drop-down-list.component';
 
 
 
@@ -19,7 +19,7 @@ import { DropdownValue, DropdownComponent } from './Shared/drop-down-list.compon
     KupotholimComponent,
     EmployeesComponent,
     HeaderComponent,   
-    DropdownComponent
+    // DropdownComponent
     
   ],
   imports: [

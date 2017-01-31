@@ -3,7 +3,7 @@ import { DataserviceService } from '../services/dataservice.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from "rxjs/Rx";
 import { Employees } from '../AngularModels/employees';
-import { DropdownValue, DropdownComponent } from '../Shared/drop-down-list.component';
+// import { DropdownValue, DropdownComponent } from '../Shared/drop-down-list.component';
 
 
 @Component({

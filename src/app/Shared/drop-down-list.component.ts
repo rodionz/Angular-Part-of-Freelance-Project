@@ -16,9 +16,9 @@ export class DropdownValue {
 @Component({
     selector: 'dropdown',
     template: `
-    <ul>
-      <li *ngFor="#value of values" (click)="selectItem(value.value)">{{value.label}}</li>
-    </ul>
+    // <ul>
+    //   <li *ngFor="#value of values" (click)="selectItem(value.value)">{{value.label}}</li>
+    // </ul>
   `
 })
 export class DropdownComponent {
