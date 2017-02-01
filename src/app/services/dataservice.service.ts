@@ -52,23 +52,14 @@ getEmployees(){
     GetKupotFromDataBase() {
         return this.http.get('http://localhost:64159/Home/GetKupot')
             .map((response: Response) => response.json())
-            .subscribe(
-            (data: KupatHolim[]) => {
-               this.kupot = data;
-                this.kupotChaged.emit(this.kupot);
-            }
-          );
+        
     }
 
     GetFamilyStatusFromDataBase() {
         return this.http.get('http://localhost:64159/Home/GetEmployees')
             .map((response: Response) => response.json())
-            .subscribe(
-              ( data : Employees[]) => {
-                this.empl = data;
-                this.employeeStatusChanged.emit(this.empl);
-              }             
-            );                  
+            
+                            
     };
 
 }
