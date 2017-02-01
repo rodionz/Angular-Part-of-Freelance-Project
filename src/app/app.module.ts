@@ -1,36 +1,38 @@
+import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-
-import { AppComponent } from './app.component';
-import { KupotholimComponent } from './kupotholim/kupotholim.component';
-import { EmployeesComponent } from './employees/employees.component';
 import { HeaderComponent } from './header.component';
-import { DataserviceService } from './services/dataservice.service';
+import { AppComponent }  from './app.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { KupotholimComponent } from './kupotholim/kupotholim.component';
 import { Routing } from './app.routing';
-// import { DropdownValue, DropdownComponent } from './Shared/drop-down-list.component';
-
-
+import { DataserviceService } from './services/dataservice.service';
+import { HttpModule } from '@angular/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SelectModule } from 'angular2-select';
+//import { DropdownValue, DropdownComponent } from './Shared/drop-down-list.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    KupotholimComponent,
-    EmployeesComponent,
-    HeaderComponent,   
-    // DropdownComponent
+    imports: [
+        BrowserModule,
+        HttpModule,
+        Routing,
+        FormsModule,
+        ReactiveFormsModule,
+        SelectModule
+   
+
+    ],
+  declarations:
+  [
+      AppComponent,
+      HeaderComponent,
+      EmployeesComponent,
+      KupotholimComponent,
+      //DropdownValue,
+      //DropdownComponent
     
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    ReactiveFormsModule,
-    Routing
-    
-  ],
+    ],
   providers: [DataserviceService],
-  bootstrap: [AppComponent]
+  bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

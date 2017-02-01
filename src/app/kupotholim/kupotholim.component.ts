@@ -1,36 +1,41 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Response } from "@angular/http";
+
 import { DataserviceService } from '../services/dataservice.service';
-import { Subscription } from 'rxjs/Rx';
 import { KupatHolim } from '../AngularModels/kupot-holim';
-// import { DropdownValue, DropdownComponent } from '../Shared/drop-down-list.component';
+import { DropdownValue, DropdownComponent } from '../Shared/drop-down-list.component';
+
+
 
 @Component({
-  selector: 'app-kupotholim',
-  templateUrl: './kupotholim.component.html'
-  
+    moduleId: module.id,
+    selector: 'app-kupotholim',
+    templateUrl: './kupotholim.component.html'
+   
 })
 export class KupotholimComponent implements OnInit {
- private subscription: Subscription;
-    kupotholim : KupatHolim [] = [];
-   
+    kupotholim: KupatHolim[] = [];
 
-  constructor(
-    private dataservice: DataserviceService,
-    private router : Router
+    constructor(
+        private dataservice: DataserviceService,
+        private router: Router
     ) { }
 
-  ngOnInit() {
-      this.kupotholim = this.dataservice.getKupot();
-      this.dataservice.kupotChaged.subscribe(
-     (kupot : KupatHolim []) => this.kupotholim = kupot
-   );
-   
-  }
+    ngOnInit() {
+        this.dataservice.GetKupotFromDataBase()
+            .subscribe((data :Response) => {
+                console.log(data)
+            })
+    }
 
 
-  onFetch(){
- 
-    console.log(this.kupotholim);
-  }
+    onFetch() {
+       
+        this.dataservice.GetKupotFromDataBase()
+            .subscribe((data : Response) => {
+                console.log(data)})
+
+       
+    }
 }
